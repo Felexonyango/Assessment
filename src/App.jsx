@@ -1,8 +1,8 @@
 
 import './App.css'
-import ParentComponent from './refs/Parent'
-import RefExample from './refs/RefExample'
-import Parent from './statelifting/Parent'
+import ParentComponent from './components/refs/Parent'
+import RefExample from './components/refs/RefExample'
+import Parent from './components/statelifting/Parent'
 
 function App() {
 
