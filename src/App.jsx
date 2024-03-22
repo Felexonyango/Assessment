@@ -1,8 +1,7 @@
 
 import './App.css'
+import PostList from './components/posts/postList'
 import ParentComponent from './components/refs/Parent'
-import RefExample from './components/refs/RefExample'
-import Parent from './components/statelifting/Parent'
 
 function App() {
 
@@ -10,10 +9,7 @@ function App() {
   return (
   
   <>
-  {/* <Parent/>
-  <RefExample/> */}
-
-  <ParentComponent/>
+ <PostList/>
   </>
   )
     
