@@ -1,19 +1,12 @@
 
-import './App.css'
+import Charts from "./components/chart/Charts";
 
 function App() {
-
-
   return (
-  
-  <>
-
-  </>
-  )
-    
-     
-
-     
+    <>
+      <Charts />
+    </>
+  );
 }
 
-export default App
+export default App;
