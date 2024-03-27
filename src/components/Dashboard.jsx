@@ -13,10 +13,10 @@ function Dashboard() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); 
+      setIsMobile(window.innerWidth < 768);
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -36,15 +36,10 @@ function Dashboard() {
     setEndDate(event.target.value);
   };
 
-  const handleGoTrack = () => {
-    console.log("Search input:", searchInput);
-    console.log("Start date:", startDate);
-    console.log("End date:", endDate);
-  };
+  const handleGoTrack = () => {};
 
   return (
     <div className="">
-      
       <div className="flex flex-row">
         <div className="container w-full md:w-3/4">
           <h5 className="mt-2 text-lg font-medium">Dashboard</h5>
@@ -58,12 +53,11 @@ function Dashboard() {
                 placeholder="Search by reg no"
                 className="border border-gray-300 px-2 py-1 mr-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-  
               <button
-                onClick={handleGoTrack}
-                className="bg-blue-950 text-white px-3 py-1 rounded-lg focus:outline-none"
+                type="button"
+                className=" bg-blue-950   text-white font-bold py-2 px-4 rounded"
               >
-                Go track
+                Go Back
               </button>
             </div>
             <div className="ml-0 sm:ml-auto sm:mt-1">
@@ -75,14 +69,14 @@ function Dashboard() {
               />
             </div>
           </div>
-  
+
           <div className="flex flex-col mt-4 md:flex-row">
             <div className="flex-1 p-4 mb-4 md:mb-0 md:mr-2">
               <div className="bg-aliceblue rounded-lg overflow-hidden">
                 <DoughCharts />
               </div>
             </div>
-            <div className="border-l-2 border-gray-300"></div> 
+            <div className="border-l-2 border-gray-300"></div>
             <div className="flex-1 p-4 md:ml-2">
               <div className="bg-aliceblue rounded-lg overflow-hidden">
                 <LineChart />
@@ -90,7 +84,11 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        <div className={`w-1/4 md:w-1/4 ${isMobile ? 'hidden' : ''} mt-9 border-l border-gray-300`}> 
+        <div
+          className={`w-1/4 md:w-1/4 ${
+            isMobile ? "hidden" : ""
+          } mt-9 border-l border-gray-300`}
+        >
           <Profile />
         </div>
       </div>

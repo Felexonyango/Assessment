@@ -2,7 +2,7 @@ import React from "react";
 
 const NotificationCard = ({ line1, line2, line3 }) => {
   return (
-    <div className="flex items-center justify-between py-2 border-t border-gray-200">
+    <div className="flex items-center justify-between py-2">
       <div>
         <div>
 

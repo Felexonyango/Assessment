@@ -120,7 +120,7 @@ const DoughCharts = () => {
         width="100%"
         height={200}
       />
-      <button className="bg-blue-950 text-white px-2 py-1 rounded-md float-right space-x-1">
+      <button className="bg-blue-950   text-white font-bold py-2 px-4 rounded float-right space-x-1">
         <div className="flex flex-row items-center">
           <span className="text-sm">Current Status</span>
           <svg

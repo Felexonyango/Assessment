@@ -80,13 +80,13 @@ const LineChart = () => {
           type="date"
           value={endDate}
           onChange={handleEndDateChange}
-          className="border border-gray-300 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-blue-800 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
       <Chart options={options} series={series} type="area" />
       <div className=" mt-9">
-        <button className="bg-blue-950 text-white px-2 py-1 rounded-md float-right space-x-1">
+        <button className="bg-blue-950   text-white font-bold py-2 px-4 rounded float-right space-x-1">
           <div className="flex flex-row items-center">
             <span className="text-sm">Movement</span>
             <svg

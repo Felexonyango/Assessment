@@ -51,98 +51,99 @@ const Modal = () => {
 
   return (
     <div className=" container mt-4">
-        <h5 className=" text-lg  font-bold  text-blue-700"> This is the modal assessment question</h5>
+      <h5 className=" text-lg  font-bold  text-blue-700">
+        {" "}
+        This is the modal assessment part
+      </h5>
 
-    <div className="flex justify-center items-center h-screen">
+      <div className="flex justify-center items-center h-screen">
+        <button
+          type="button"
+          className="bg-blue-950 hover:bg-blue-950 text-white font-bold py-2 px-4 rounded"
+          onClick={handleModalOpen}
+        >
+          Open Modal
+        </button>
 
-      <button
-        type="button"
-        className="bg-blue-950 hover:bg-blue-950 text-white font-bold py-2 px-4 rounded"
-        onClick={handleModalOpen}
-      >
-        Open Modal
-      </button>
-
-      {modalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50">
-          <div className="bg-white rounded-lg p-8 max-w-md w-full">
-            <div className="flex justify-between items-center mb-4">
-              <h5 className="text-lg font-bold">Submission  Form </h5>
-              <button
-                type="button"
-                className="text-gray-600 hover:text-gray-800"
-                onClick={handleModalClose}
-              >
-                <svg
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
+        {modalOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50">
+            <div className="bg-white rounded-lg p-8 max-w-md w-full">
+              <div className="flex justify-between items-center mb-4">
+                <h5 className="text-lg font-bold">Submission Form </h5>
+                <button
+                  type="button"
+                  className="text-gray-600 hover:text-gray-800"
+                  onClick={handleModalClose}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-            <AsyncSelect
-              cacheOptions
-              defaultOptions
-              loadOptions={fetchPosts}
-              value={selectedPost}
-              onChange={handlePostSelect}
-              placeholder="Search for a Post"
-            />
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+              <AsyncSelect
+                cacheOptions
+                defaultOptions
+                loadOptions={fetchPosts}
+                value={selectedPost}
+                onChange={handlePostSelect}
+                placeholder="Search for a Post"
+              />
 
-            <div className="mt-4">
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-                placeholder="Name"
-                className="w-full bg-gray-100 border border-gray-300 rounded-md px-3 py-2 mb-4"
-              />
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                placeholder="Email"
-                className="w-full bg-gray-100 border border-gray-300 rounded-md px-3 py-2 mb-4"
-              />
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleInputChange}
-                placeholder="Message"
-                className="w-full bg-gray-100 border border-gray-300 rounded-md px-3 py-2 mb-4"
-              ></textarea>
-            </div>
-            <div className="flex justify-end mt-4">
-              <button
-                type="button"
-                className=" bg-red-900  text-white font-bold py-2 px-4 rounded mr-2"
-                onClick={handleModalClose}
-              >
-                Close
-              </button>
-              <button
-                type="button"
-                className=" bg-blue-950   text-white font-bold py-2 px-4 rounded"
-               
-              >
-                Submit 
-              </button>
+              <div className="mt-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Name"
+                  className="w-full bg-gray-100 border border-gray-300 rounded-md px-3 py-2 mb-4"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Email"
+                  className="w-full bg-gray-100 border border-gray-300 rounded-md px-3 py-2 mb-4"
+                />
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Message"
+                  className="w-full bg-gray-100 border border-gray-300 rounded-md px-3 py-2 mb-4"
+                ></textarea>
+              </div>
+              <div className="flex justify-end mt-4">
+                <button
+                  type="button"
+                  className=" bg-red-900  text-white font-bold py-2 px-4 rounded mr-2"
+                  onClick={handleModalClose}
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  className=" bg-blue-950   text-white font-bold py-2 px-4 rounded"
+                >
+                  Submit
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
     </div>
   );
 };
