@@ -16,10 +16,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-blue-800 py-2 px-4">
+    <nav className="bg-blue-950 py-2 px-4">
       <div className="flex items-center justify-between">
         <div className="text-white font-bold text-sm">LOGO</div>
-        <button onClick={toggleMenu} className="block md:hidden text-white hover:bg-gray-700 px-2 py-1 rounded focus:outline-none">
+        <button onClick={toggleMenu} className="block md:hidden text-white px-2 py-1 rounded focus:outline-none">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="hidden md:flex md:space-x-4">
           {menuItems.map((item, index) => (
             <div className="relative" key={index}>
-              <button className="text-white hover:bg-gray-700 px-2 py-1 rounded">
+              <button className="text-white px-2 py-1 rounded">
                 {item.label}
               </button>
             </div>
@@ -47,7 +47,7 @@ const Navbar = () => {
           <ul className="flex flex-col space-y-2">
             {menuItems.map((item, index) => (
               <li key={index}>
-                <Link to={item.to} className="text-gray-600 hover:text-gray-800 block px-4 py-2 rounded">
+                <Link to={item.to} className="text-gray-600 block px-4 py-2 rounded">
                   {item.label}
                 </Link>
               </li>
