@@ -50,7 +50,11 @@ const Modal = () => {
   };
 
   return (
+    <div className=" container mt-4">
+        <h5 className=" text-lg  font-bold  text-blue-700"> This is the modal assessment question</h5>
+
     <div className="flex justify-center items-center h-screen">
+
       <button
         type="button"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -63,7 +67,7 @@ const Modal = () => {
         <div className="fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-50">
           <div className="bg-white rounded-lg p-8 max-w-md w-full">
             <div className="flex justify-between items-center mb-4">
-              <h5 className="text-lg font-bold">Select Post</h5>
+              <h5 className="text-lg font-bold">Submission  Form </h5>
               <button
                 type="button"
                 className="text-gray-600 hover:text-gray-800"
@@ -122,15 +126,23 @@ const Modal = () => {
             <div className="flex justify-end mt-4">
               <button
                 type="button"
-                className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded"
+                className=" bg-red-900  text-white font-bold py-2 px-4 rounded mr-2"
                 onClick={handleModalClose}
               >
                 Close
+              </button>
+              <button
+                type="button"
+                className=" bg-blue-950   text-white font-bold py-2 px-4 rounded"
+               
+              >
+                Submit 
               </button>
             </div>
           </div>
         </div>
       )}
+    </div>
     </div>
   );
 };
