@@ -90,19 +90,19 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex justify-between flex-col mt-4 md:flex-row md:space-x-4">
-            <div className="flex-1">
-              <div className="overflow-hidden">
-                <DoughCharts />
-              </div>
-            </div>
+          <div className="flex justify-between flex-col   h-3/4 mt-4 md:flex-row md:space-x-4">
+      <div className="flex-1">
+        <div className="h-full overflow-hidden">
+          <DoughCharts />
+        </div>
+      </div>
 
-            <div className="flex-1 mt-4 md:mt-0">
-              <div className=" overflow-hidden">
-                <LineChart />
-              </div>
-            </div>
-          </div>
+      <div className="flex-1 mt-4 md:mt-0">
+        <div className="h-full overflow-hidden">
+          <LineChart />
+        </div>
+      </div>
+    </div>
         </div>
         <div
           className={`w-1/4 md:w-1/4 ${
