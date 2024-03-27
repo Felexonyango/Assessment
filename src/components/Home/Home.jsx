@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import "tailwindcss/tailwind.css";
+import React, { useState } from "react";
+import AsyncSelect from 'react-select/async';
 
 const Home = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [posts, setPosts] = useState([]);
   const [selectedPost, setSelectedPost] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -11,21 +10,23 @@ const Home = () => {
     message: "",
   });
 
-  const fetchPosts = async () => {
+  const fetchPosts = async (inputValue) => {
     try {
       const response = await fetch(
-        "https://jsonplaceholder.typicode.com/posts"
+        `https://jsonplaceholder.typicode.com/posts?q=${inputValue}`
       );
       const data = await response.json();
-      setPosts(data);
+     
+      const options = data.map(post => ({ value: post.id, label: post.title }));
+      return options;
     } catch (error) {
       console.error("Error fetching posts:", error);
+      return [];
     }
   };
 
   const handleModalOpen = () => {
     setModalOpen(true);
-    fetchPosts();
   };
 
   const handleModalClose = () => {
@@ -33,8 +34,8 @@ const Home = () => {
     setSelectedPost(null);
   };
 
-  const handlePostSelect = (postId) => {
-    setSelectedPost(posts.find((post) => post.id === postId));
+  const handlePostSelect = (selectedOption) => {
+    setSelectedPost(selectedOption);
   };
 
   const handleInputChange = (e) => {
@@ -81,17 +82,14 @@ const Home = () => {
                 </svg>
               </button>
             </div>
-            <select
-              className="w-full bg-gray-100 border border-gray-300 rounded-md px-3 py-2 mb-4"
-              onChange={(e) => handlePostSelect(parseInt(e.target.value))}
-            >
-              <option value="">Select a Post</option>
-              {posts.map((post) => (
-                <option key={post.id} value={post.id}>
-                  {post.title}
-                </option>
-              ))}
-            </select>
+            <AsyncSelect
+              cacheOptions
+              defaultOptions
+              loadOptions={fetchPosts}
+              value={selectedPost}
+              onChange={handlePostSelect}
+              placeholder="Search for a Post"
+            />
 
             <div className="mt-4">
               <input

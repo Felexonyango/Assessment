@@ -36,21 +36,23 @@ function App() {
       <hr className="my-4 border-t border-gray-300" />
       <div class="flex flex-col sm:flex-row"> 
     <div class="flex flex-row mb-2 sm:mb-0"> 
-        <input 
-            type="text" 
-            value={searchInput} 
-            onChange={handleSearchInputChange} 
-            placeholder="Search by reg no" 
-            class="border border-gray-300 px-2 py-1 mr-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
-        <button onClick={handleGoTrack} class="bg-blue-950 text-white px-3 py-1 rounded-md focus:outline-none">Go track</button>
+    <input 
+    type="text" 
+    value={searchInput} 
+    onChange={handleSearchInputChange} 
+    placeholder="Search by reg no" 
+    class="border border-gray-300 px-2 py-1 mr-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+/>
+
+      <button onClick={handleGoTrack} class="bg-blue-950 text-white px-3 py-1 rounded-lg focus:outline-none">Go track</button>
+     
     </div>
     <div class="ml-0 sm:ml-auto sm:mt-1">
         <input 
             type="date" 
             value={startDate} 
             onChange={handleStartDateChange} 
-            class="border border-gray-300 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="border   border-blue-700 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
     </div>
 </div>
@@ -65,6 +67,7 @@ function App() {
         </div>
       </div>
       </div>
+      <Home/>
      
     </div>
   );
