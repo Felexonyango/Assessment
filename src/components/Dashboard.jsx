@@ -46,16 +46,36 @@ function Dashboard() {
           <hr className="my-4 border-t border-gray-300" />
           <div className="flex flex-col sm:flex-row">
             <div className="flex flex-row mb-2 sm:mb-0">
-              <input
-                type="text"
-                value={searchInput}
-                onChange={handleSearchInputChange}
-                placeholder="Search by reg no"
-                className="border border-gray-300 px-2 py-1 mr-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
+              <div className="relative">
+                <span className="absolute inset-y-0 left-0 pl-3 flex items-center">
+                  <svg
+                    className="h-5 w-5 text-blue-950"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                  >
+                    <path
+                      fill="currentColor" 
+                      fillRule="evenodd"
+                      d="M13.32 11.57l4.22 4.18a1 1 0 0 1-1.41 1.42l-4.18-4.22a7 7 0 1 1 1.37-1.38zM7 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </span>
+
+                <input
+                  type="text"
+                  value={searchInput}
+                  onChange={handleSearchInputChange}
+                  placeholder="Search by Reg No.."
+                  className="pl-10 border-b border-blue-950 px-2 py-2 rounded-bl-lg rounded-tl-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
               <button
+               
                 type="button"
-                className=" bg-blue-950   text-white font-bold py-2 px-4 rounded"
+                className="bg-blue-950 text-white font-bold py-1 px-2 rounded"
               >
                 Go Track
               </button>
@@ -70,14 +90,14 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex  h-full  flex-col mt-4 md:flex-row">
-            <div className="flex-1 p-4 mb-4 md:mb-0 md:mr-2">
+          <div className="flex justify-between flex-col mt-4 md:flex-row md:space-x-4">
+            <div className="flex-1">
               <div className="overflow-hidden">
                 <DoughCharts />
               </div>
             </div>
 
-            <div className="flex-1 p-4 md:ml-2">
+            <div className="flex-1 mt-4 md:mt-0">
               <div className=" overflow-hidden">
                 <LineChart />
               </div>

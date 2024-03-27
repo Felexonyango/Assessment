@@ -74,7 +74,7 @@ const Notifications = () => {
       line2: "10/2/2020 -14:00",
       line3: "Kapenguria Deport",
       iconColor: "#8B0000",
-      backgroundColor: "#eff6ff"
+      backgroundColor: "#f8faff"
     },
     { 
       id: 2,
@@ -83,7 +83,7 @@ const Notifications = () => {
       line2: "12/2/2020 -16:00", 
       line3: "Nyeri Deport" ,
       iconColor: "#F08080",
-      backgroundColor: "#eff6ff"
+      backgroundColor: "#f8faff"
     },
     { 
       id: 3,
@@ -92,7 +92,7 @@ const Notifications = () => {
       line2: "14/2/2020 -16:00", 
       line3: "Nairobi Deport" ,
       iconColor: "#008080",
-      backgroundColor: "#eff6ff"
+      backgroundColor: "#f8faff"
     },
    
   ];

@@ -91,7 +91,7 @@ const DoughCharts = () => {
   });
 
   return (
-    <div className="bg-indigo-50 rounded-lg overflow-hidden p-4 relative " style={{ height: "300px" }}>
+    <div className="bg-indigo-50 rounded-lg overflow-hidden p-4 relative " style={{ height: "300px",color:"#f8faff"}}>
       <h6 className="text-left font-bold  text-blue-800">Assets Status</h6>
       <div className=" items-center">
 
