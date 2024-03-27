@@ -42,7 +42,7 @@ const Navbar = () => {
           ))}
         </div>
       </div>
-      {isMenuOpen && (
+      {/* {isMenuOpen && (
         <div className="md:hidden bg-white text-gray-800 mt-12 w-full p-2 rounded shadow-lg">
           <ul className="flex flex-col space-y-2">
             {menuItems.map((item, index) => (
@@ -54,7 +54,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-      )}
+      )} */}
     </nav>
   );
 }
