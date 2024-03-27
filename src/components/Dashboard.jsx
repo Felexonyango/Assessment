@@ -70,19 +70,19 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex flex-col mt-4 md:flex-row">
-            <div className="flex-1 p-4 mb-4 md:mb-0 md:mr-2">
-              <div className="bg-aliceblue rounded-lg overflow-hidden">
-                <DoughCharts />
-              </div>
-            </div>
-            <div className="border-l-2 border-gray-300"></div>
-            <div className="flex-1 p-4 md:ml-2">
-              <div className="bg-aliceblue rounded-lg overflow-hidden">
-                <LineChart />
-              </div>
-            </div>
-          </div>
+         <div className="flex  h-full  flex-col mt-4 md:flex-row">
+  <div className="flex-1 p-4 mb-4 md:mb-0 md:mr-2">
+    <div className="overflow-hidden">
+      <DoughCharts />
+    </div>
+  </div>
+
+  <div className="flex-1 p-4 md:ml-2">
+    <div className=" overflow-hidden">
+      <LineChart />
+    </div>
+  </div>
+</div>
         </div>
         <div
           className={`w-1/4 md:w-1/4 ${

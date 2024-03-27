@@ -78,48 +78,52 @@ const DoughCharts = () => {
           },
         },
       ],
-      annotations: {
-        points: [
-          {
-            x: 0,
-            y: 40,
-            marker: {
-              size: 5,
-              fillColor: "#1B998B",
-            },
-          },
-          {
-            x: 1,
-            y: 21,
-            marker: {
-              size: 5,
-              fillColor: "#FF4560",
-            },
-          },
-          {
-            x: 2,
-            y: 60,
-            marker: {
-              size: 5,
-              fillColor: "#FF9800",
-            },
-          },
-        ],
-      },
+      // annotations: {
+      //   points: [
+      //     {
+      //       x: 0,
+      //       y: 40,
+      //       marker: {
+      //         size: 5,
+      //         fillColor: "#1B998B",
+      //       },
+      //     },
+      //     {
+      //       x: 1,
+      //       y: 21,
+      //       marker: {
+      //         size: 5,
+      //         fillColor: "#FF4560",
+      //       },
+      //     },
+      //     {
+      //       x: 2,
+      //       y: 60,
+      //       marker: {
+      //         size: 5,
+      //         fillColor: "#FF9800",
+      //       },
+      //     },
+      //   ],
+      // },
     },
     series: [40, 21, 60],
   });
 
   return (
-    <div className="">
+    <div className="bg-indigo-50 rounded-lg overflow-hidden p-4 relative " style={{ height: "300px" }}>
       <h6 className="text-left font-bold  text-blue-800">Assets Status</h6>
+      <div className=" items-center">
+
       <Chart
         options={chartData.options}
         series={chartData.series}
         type="donut"
         width="100%"
-        height={200}
+        height={300}
+        
       />
+      </div>
       <button className="bg-blue-950   text-white font-bold py-2 px-4 rounded float-right space-x-1">
         <div className="flex flex-row items-center">
           <span className="text-sm">Current Status</span>

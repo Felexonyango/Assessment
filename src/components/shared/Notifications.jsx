@@ -1,20 +1,66 @@
+
 import React from "react";
 
-const NotificationCard = ({ line1, line2, line3 }) => {
-  return (
-    <div className="flex items-center justify-between py-2">
-      <div>
-        <div>
+const NotificationCard = ({ notification }) => {
+  const iconSquareStyle = {
+    width: "30px",
+    height: "30px",
+    backgroundColor: notification.iconColor,
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "25px"
+  };
+  const cardStyle = {
+    backgroundColor: notification.backgroundColor,
+    padding: "10px", 
+    marginBottom: "10px", 
+    borderRadius: "10px", 
+    boxShadow: "0 2px 4px rgba(0,0,0,0.1)" 
+  };
 
-        <p className="text-sm text-gray-600">{line1}</p>
-        </div>
-        <p className="text-sm text-gray-600">{line2}</p>
-        <p className="text-sm text-gray-600">{line3}</p>
+  
+  
+
+  return (
+    <div className="notification-card" style={cardStyle}>
+    <div className="flex items-center justify-between py-2 ml-2  ">
+     
+      <div className="icon-square flex items-center justify-center" style={iconSquareStyle}  >
+       
+        {notification.id === 1 && (
+          <i className={`fa ${notification.icon}  text-white`} aria-hidden="true"></i>
+        )}
+        {notification.id === 2 && (
+          <i className={`fa ${notification.icon}  text-white`} aria-hidden="true"></i>
+        )}
+        {notification.id === 3 && (
+          <i className={`fa ${notification.icon}  text-white`} aria-hidden="true"></i>
+        )}
+        {notification.id === 4 && (
+          <i className={`fa ${notification.icon}  text-white`} aria-hidden="true"></i>
+        )}
+           
       </div>
-      <i
-        className="fa fa-exclamation-circle  text-gray-600"
-        aria-hidden="true"
-      ></i>
+
+      
+        <div  className="ml-4 ">
+          <p className="text-sm  text-gray-600">
+            {notification.line1}
+          </p>
+          <p className="text-sm text-gray-600">
+            {notification.line2}
+          </p>
+          <p className="text-sm  text-black">
+            {notification.line3}
+          </p>
+        </div>
+       
+    
+        <div className="flex-grow text-end mr-3">
+          <i className="fa fa-exclamation-circle text-gray-600" aria-hidden="true"></i>
+        </div>
+    </div>
     </div>
   );
 };
@@ -22,27 +68,53 @@ const NotificationCard = ({ line1, line2, line3 }) => {
 const Notifications = () => {
   const notifications = [
     {
+      id: 1,
+      icon: "fa-battery-half",
       line1: "KBL 175 G",
       line2: "10/2/2020 -14:00",
       line3: "Kapenguria Deport",
+      iconColor: "#8B0000",
+      backgroundColor: "#eff6ff"
     },
-    { line1: "KBS 195 H", line2: "12/2/2020 -16:00", line3: "Nyeri Deport" },
-    { line1: "KBS 178 V", line2: "14/2/2020 -16:00", line3: "Nairobi Deport" },
-    { line1: "KBV 17F V", line2: "14/2/2020 -16:00", line3: "Taita Deport" },
+    { 
+      id: 2,
+      icon: "fa-car",
+      line1: "KBS 195 H", 
+      line2: "12/2/2020 -16:00", 
+      line3: "Nyeri Deport" ,
+      iconColor: "#F08080",
+      backgroundColor: "#eff6ff"
+    },
+    { 
+      id: 3,
+      icon: "fa-train",
+      line1: "KBS 178 V", 
+      line2: "14/2/2020 -16:00", 
+      line3: "Nairobi Deport" ,
+      iconColor: "#008080",
+      backgroundColor: "#eff6ff"
+    },
+    { 
+      id: 4,
+      icon: "fa-clock",
+      line1: "KBV 17F V", 
+      line2: "14/2/2020 -16:00", 
+      line3: "Taita Deport",
+      iconColor: "#E36000 ",
+      backgroundColor: "#eff6ff"
+    },
   ];
 
   return (
     <div>
-      <h4 className="text-sm font-medium text-gray-500 mb-2">
+      <h4 className="text-sm font-medium text-gray-500 mb-2 text-center">
         RECENT NOTIFICATIONS
       </h4>
+      
       {notifications.map((notification, index) => (
         <NotificationCard
           key={index}
-          line1={notification.line1}
-          line2={notification.line2}
-          line3={notification.line3}
-         
+          notification={notification}
         />
       ))}
     </div>
@@ -50,3 +122,4 @@ const Notifications = () => {
 };
 
 export default Notifications;
+
