@@ -60,6 +60,7 @@ const LineChart = () => {
   const [series] = useState([
     {
       name: "Series 1",
+      color: "#d7d6f4",
       data: [30, 40, 35, 50, 49, 60, 70],
     },
   ]);

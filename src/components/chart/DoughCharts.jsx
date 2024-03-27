@@ -21,6 +21,12 @@ const DoughCharts = () => {
             size: "65%",
             background: "transparent",
             labels: {
+              style:{
+                boader:"2px solid #ccc",
+
+
+                boarderRadius:'200px'
+              },
               show: true,
               name: {
                 show: true,
@@ -58,6 +64,7 @@ const DoughCharts = () => {
                   }, 0);
                 },
               },
+             
             },
           },
         },
@@ -78,34 +85,7 @@ const DoughCharts = () => {
           },
         },
       ],
-      // annotations: {
-      //   points: [
-      //     {
-      //       x: 0,
-      //       y: 40,
-      //       marker: {
-      //         size: 5,
-      //         fillColor: "#1B998B",
-      //       },
-      //     },
-      //     {
-      //       x: 1,
-      //       y: 21,
-      //       marker: {
-      //         size: 5,
-      //         fillColor: "#FF4560",
-      //       },
-      //     },
-      //     {
-      //       x: 2,
-      //       y: 60,
-      //       marker: {
-      //         size: 5,
-      //         fillColor: "#FF9800",
-      //       },
-      //     },
-      //   ],
-      // },
+   
     },
     series: [40, 21, 60],
   });

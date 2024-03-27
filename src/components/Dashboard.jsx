@@ -39,9 +39,9 @@ function Dashboard() {
   const handleGoTrack = () => {};
 
   return (
-    <div className="">
+    <>
       <div className="flex flex-row">
-        <div className="container w-full md:w-3/4">
+        <div className="container  w-full md:w-3/4">
           <h5 className="mt-2 text-lg font-medium">Dashboard</h5>
           <hr className="my-4 border-t border-gray-300" />
           <div className="flex flex-col sm:flex-row">
@@ -70,19 +70,19 @@ function Dashboard() {
             </div>
           </div>
 
-         <div className="flex  h-full  flex-col mt-4 md:flex-row">
-  <div className="flex-1 p-4 mb-4 md:mb-0 md:mr-2">
-    <div className="overflow-hidden">
-      <DoughCharts />
-    </div>
-  </div>
+          <div className="flex  h-full  flex-col mt-4 md:flex-row">
+            <div className="flex-1 p-4 mb-4 md:mb-0 md:mr-2">
+              <div className="overflow-hidden">
+                <DoughCharts />
+              </div>
+            </div>
 
-  <div className="flex-1 p-4 md:ml-2">
-    <div className=" overflow-hidden">
-      <LineChart />
-    </div>
-  </div>
-</div>
+            <div className="flex-1 p-4 md:ml-2">
+              <div className=" overflow-hidden">
+                <LineChart />
+              </div>
+            </div>
+          </div>
         </div>
         <div
           className={`w-1/4 md:w-1/4 ${
@@ -92,7 +92,7 @@ function Dashboard() {
           <Profile />
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

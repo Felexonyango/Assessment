@@ -51,7 +51,7 @@ const NotificationCard = ({ notification }) => {
           <p className="text-sm text-gray-600">
             {notification.line2}
           </p>
-          <p className="text-sm  text-black">
+          <p className="text-sm  font-bold"  style={{ color:'#76e5e0'}}>
             {notification.line3}
           </p>
         </div>
@@ -94,15 +94,7 @@ const Notifications = () => {
       iconColor: "#008080",
       backgroundColor: "#eff6ff"
     },
-    { 
-      id: 4,
-      icon: "fa-clock",
-      line1: "KBV 17F V", 
-      line2: "14/2/2020 -16:00", 
-      line3: "Taita Deport",
-      iconColor: "#E36000 ",
-      backgroundColor: "#eff6ff"
-    },
+   
   ];
 
   return (

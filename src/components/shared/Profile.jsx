@@ -5,7 +5,7 @@ const Profile = () => {
   const [name, setName] = useState("David");
 
   return (
-    <div className="  items-center">
+    <div className=" items-center">
       <div className="flex justify-center items-center text-center">
       
           <svg
