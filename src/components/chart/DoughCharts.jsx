@@ -21,11 +21,10 @@ const DoughCharts = () => {
             size: "65%",
             background: "transparent",
             labels: {
-              style:{
-                boader:"2px solid #ccc",
+              style: {
+                boader: "2px solid #ccc",
 
-
-                boarderRadius:'200px'
+                boarderRadius: "200px",
               },
               show: true,
               name: {
@@ -64,7 +63,6 @@ const DoughCharts = () => {
                   }, 0);
                 },
               },
-             
             },
           },
         },
@@ -85,24 +83,24 @@ const DoughCharts = () => {
           },
         },
       ],
-   
     },
     series: [40, 21, 60],
   });
 
   return (
-    <div className="bg-indigo-50 rounded-lg overflow-hidden p-4 relative " style={{ height: "300px",color:"#f8faff"}}>
+    <div
+      className="bg-indigo-50 rounded-lg overflow-hidden p-4 relative "
+      style={{ height: "300px", color: "#f8faff" }}
+    >
       <h6 className="text-left font-bold  text-blue-800">Assets Status</h6>
       <div className=" items-center">
-
-      <Chart
-        options={chartData.options}
-        series={chartData.series}
-        type="donut"
-        width="100%"
-        height={300}
-        
-      />
+        <Chart
+          options={chartData.options}
+          series={chartData.series}
+          type="donut"
+          width="100%"
+          height={300}
+        />
       </div>
       <button className="bg-blue-950   text-white font-bold py-2 px-4 rounded float-right space-x-1">
         <div className="flex flex-row items-center">

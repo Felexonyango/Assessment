@@ -94,14 +94,24 @@ const Notifications = () => {
       iconColor: "#008080",
       backgroundColor: "#f8faff"
     },
+    { 
+      id: 4,
+      icon: "fa-clock",
+      line1: "KBV 17F V", 
+      line2: "14/2/2020 -16:00", 
+      line3: "Taita Deport",
+      iconColor: "#E36000 ",
+      backgroundColor: "#eff6ff"
+    },
+    
    
   ];
 
   return (
-    <div>
+    <div style={{ maxHeight: "400px", overflowY: "auto" }}>
       <h4 className="text-sm font-medium text-gray-500 mb-2 text-center">
         RECENT NOTIFICATIONS
-      </h4>
+      </h4> 
       
       {notifications.map((notification, index) => (
         <NotificationCard
