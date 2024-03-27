@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Chart from "react-apexcharts";
 
-const Charts = () => {
-  const [chartData, setChartData] = useState({
+const DoughCharts = () => {
+  const [chartData] = useState({
     options: {
       chart: {
         type: "donut",
@@ -17,9 +17,6 @@ const Charts = () => {
           offsetX: 0,
           offsetY: 0,
           customScale: 1,
-          dataLabels: {
-            enabled: false, // Disable dataLabels
-          },
           donut: {
             size: "65%",
             background: "transparent",
@@ -43,8 +40,8 @@ const Charts = () => {
                 fontWeight: 400,
                 color: undefined,
                 offsetY: 16,
-                formatter: function (val) {
-                  return val;
+                formatter: function () {
+                  return "";
                 },
               },
               total: {
@@ -68,14 +65,54 @@ const Charts = () => {
       fill: {
         colors: ["#1B998B", "#FF4560", "#FF9800"],
       },
+      legend: {
+        show: false,
+      },
+      responsive: [
+        {
+          breakpoint: 0,
+          options: {
+            chart: {
+              width: "60%",
+            },
+          },
+        },
+      ],
+      annotations: {
+        points: [
+          {
+            x: 0,
+            y: 40,
+            marker: {
+              size: 5, 
+              fillColor: "#1B998B", 
+            },
+          },
+          {
+            x: 1,
+            y: 21,
+            marker: {
+              size: 5,
+              fillColor: "#FF4560",
+            },
+          },
+          {
+            x: 2,
+            y: 60,
+            marker: {
+              size: 5,
+              fillColor: "#FF9800",
+            },
+          },
+        ],
+      },
     },
-    series: [40, 21, 60],
+    series: [40, 21, 60]
   });
 
-
-
   return (
-    <div style={{ position: "relative" }}>
+    <div>
+      <h6>Assets  Status</h6>
       <Chart
         options={chartData.options}
         series={chartData.series}
@@ -83,9 +120,8 @@ const Charts = () => {
         width="100%"
         height={320}
       />
-   
     </div>
   );
 };
 
-export default Charts;
+export default DoughCharts;
