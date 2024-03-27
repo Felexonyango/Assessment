@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import AsyncSelect from 'react-select/async';
+import AsyncSelect from "react-select/async";
 
-const Home = () => {
+const Modal = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
   const [formData, setFormData] = useState({
@@ -16,8 +16,11 @@ const Home = () => {
         `https://jsonplaceholder.typicode.com/posts?q=${inputValue}`
       );
       const data = await response.json();
-     
-      const options = data.map(post => ({ value: post.id, label: post.title }));
+
+      const options = data.map((post) => ({
+        value: post.id,
+        label: post.title,
+      }));
       return options;
     } catch (error) {
       console.error("Error fetching posts:", error);
@@ -132,4 +135,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Modal;

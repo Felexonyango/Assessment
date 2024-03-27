@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import DoughCharts from "./components/chart/DoughCharts";
 import LineChart from "./components/chart/LineChart";
-import Navbar from "./components/Home/Navbar";
-import Profile from "./components/Home/Profile";
+import Navbar from "./components/shared/Navbar";
+import Profile from "./components/shared/Profile";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 function App() {
@@ -13,10 +13,10 @@ function App() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768); // Set breakpoint as needed
+      setIsMobile(window.innerWidth < 768); 
     };
 
-    handleResize(); // Initial check
+    handleResize(); 
     window.addEventListener("resize", handleResize);
 
     return () => {

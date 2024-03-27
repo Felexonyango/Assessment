@@ -42,6 +42,7 @@ const Notifications = () => {
           line1={notification.line1}
           line2={notification.line2}
           line3={notification.line3}
+         
         />
       ))}
     </div>

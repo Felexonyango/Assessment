@@ -12,6 +12,7 @@ const Navbar = () => {
   const menuItems = [
     { label: 'Dashboard', to: '/' },
     { label: 'Tracking', to: '/tracking' },
+    { label:'Modal', to:'/modal'},
     { label: 'Analytics', to: '/analytics' }
   ];
 
