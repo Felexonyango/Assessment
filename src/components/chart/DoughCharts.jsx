@@ -22,9 +22,8 @@ const DoughCharts = () => {
             background: "transparent",
             labels: {
               style: {
-                boader: "2px solid #ccc",
-
-                boarderRadius: "200px",
+                border: "2px solid #ccc",
+                borderRadius: "200px",
               },
               show: true,
               name: {
@@ -68,10 +67,17 @@ const DoughCharts = () => {
         },
       },
       fill: {
-        colors: ["#1B998B", "#FF4560", "#FF9800"],
+        colors: ["#1b998b", "#bb2e45", "#ff9800"],
+        hover: {
+          // opacity: 0.9,
+          colors: ["#1b998b", "#bb2e45", "#ff9800"],
+        },
       },
       legend: {
         show: true,
+        labels: {
+          colors: ["#1b998b", "#bb2e45", "#ff9800"],
+        },
       },
       responsive: [
         {
@@ -88,7 +94,10 @@ const DoughCharts = () => {
   });
 
   return (
-    <div className="bg-indigo-50 rounded-lg overflow-hidden p-4 relative h-full" style={{ color: "#f8faff" }}>
+    <div
+      className="bg-indigo-50 rounded-lg overflow-hidden p-4 relative h-full"
+      style={{ color: "#f8faff" }}
+    >
       <h6 className="text-left font-bold text-blue-800">Assets Status</h6>
       <div className="items-center" style={{ height: "100%" }}>
         <Chart
@@ -102,15 +111,22 @@ const DoughCharts = () => {
       <button className="bg-blue-950 text-white font-bold py-2 px-4 rounded absolute bottom-4 right-4">
         <div className="flex flex-row items-center">
           <span className="text-sm">Current Status</span>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-            <path fillRule="evenodd" d="M13.77 10.47a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.44 11H4.75a.75.75 0 0 1 0-1.5H11.44l-2.98-2.97a.75.75 0 0 1 1.06-1.06l4.25 4.25z" clipRule="evenodd"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 ml-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M13.77 10.47a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.44 11H4.75a.75.75 0 0 1 0-1.5H11.44l-2.98-2.97a.75.75 0 0 1 1.06-1.06l4.25 4.25z"
+              clipRule="evenodd"
+            />
           </svg>
         </div>
       </button>
     </div>
-  
   );
-  
 };
 
 export default DoughCharts;
