@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  const [trackingDropdownVisible, setTrackingDropdownVisible] = useState(false);
+ 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,8 +11,8 @@ const Navbar = () => {
 
   const menuItems = [
     { label: 'Dashboard', to: '/' },
-    { label: 'Tracking', to: '/tracking' },
     { label:'Modal', to:'/modal'},
+    { label: 'Tracking', to: '/tracking' },
     { label: 'Analytics', to: '/analytics' }
   ];
 
@@ -35,11 +35,9 @@ const Navbar = () => {
         </button>
         <div className="hidden md:flex md:space-x-4">
           {menuItems.map((item, index) => (
-            <div className="relative" key={index}>
-              <button className="text-white px-2 py-1 rounded">
-                {item.label}
-              </button>
-            </div>
+          <Link to={item.to} key={index} className="text-white px-2 py-1 rounded">
+          {item.label}
+        </Link>
           ))}
         </div>
       </div>
