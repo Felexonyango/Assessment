@@ -57,7 +57,7 @@ function Dashboard() {
                 type="button"
                 className=" bg-blue-950   text-white font-bold py-2 px-4 rounded"
               >
-                Go Back
+                Go Track
               </button>
             </div>
             <div className="ml-0 sm:ml-auto sm:mt-1">
