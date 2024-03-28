@@ -66,6 +66,7 @@ const NotificationCard = ({ notification }) => {
 };
 
 const Notifications = () => {
+
   const notifications = [
     {
       id: 1,
