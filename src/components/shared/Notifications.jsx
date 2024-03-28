@@ -44,7 +44,7 @@ const NotificationCard = ({ notification }) => {
       </div>
 
       
-        <div  className="ml-4 ">
+        <div  className="ml-4  mr-2">
           <p className="text-sm  text-gray-600">
             {notification.line1}
           </p>
@@ -109,7 +109,7 @@ const Notifications = () => {
 
   return (
     <div style={{ maxHeight: "400px", overflowY: "auto" }}>
-      <h4 className="text-sm font-medium text-gray-500 mb-2 text-center">
+      <h4 className="text-sm font-bold text-gray-500 mb-2 text-center">
         RECENT NOTIFICATIONS
       </h4> 
       

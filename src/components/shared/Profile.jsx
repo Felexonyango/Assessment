@@ -27,7 +27,7 @@ const Profile = () => {
         
        
       </div>
-      <p className="text-lg text  items-center text-center text-blue-800 font-semibold">Hi {name}, welcome</p>
+      <p className="text-lg text  items-center text-center text-blue-950 font-semibold">Hi {name}, welcome.</p>
         
       <div className="border-t border-gray-200 mt-2 pt-2  items-center"></div>
       <Notifications/>

@@ -17,14 +17,14 @@ const DoughCharts = () => {
           offsetX: 0,
           offsetY: 0,
           customScale: 1,
+          dataLabels: {
+            enabled: false
+        },
           donut: {
             size: "65%",
             background: "transparent",
             labels: {
-              style: {
-                border: "2px solid #ccc",
-                borderRadius: "200px",
-              },
+             
               show: true,
               name: {
                 show: true,
@@ -66,18 +66,17 @@ const DoughCharts = () => {
           },
         },
       },
-      fill: {
-        colors: ["#1b998b", "#bb2e45", "#ff9800"],
-        hover: {  
-          // opacity: 0.9,
-          colors: ["#1b998b", "#bb2e45", "#ff9800"],
-        },
+    
+      states: {
+        hover: {
+          filter: {
+            type: "none"
+          }
+        }
       },
       legend: {
         show: true,
-        labels: {
-          colors: ["#1b998b", "#bb2e45", "#ff9800"],
-        },
+       
       },
       responsive: [
         {
@@ -92,6 +91,7 @@ const DoughCharts = () => {
     },
     series: [40, 21, 60],
   });
+  
 
   return (
     <div
@@ -110,7 +110,7 @@ const DoughCharts = () => {
       </div>
       <button className="bg-blue-950 text-white font-bold py-2 px-4 rounded absolute bottom-4 right-4">
         <div className="flex flex-row items-center">
-          <span className="text-sm">Current Status</span>
+          <span className="text-sm">Current status</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 ml-1"

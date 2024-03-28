@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Chart from "react-apexcharts";
 
 const LineChart = () => {
-  const [dateStarted, setStartDate] = useState("");
+  const [startDate, setStartDate] = useState("");
   // const [endDate, setEndDate] = useState("");
   const [options] = useState({
     chart: {
@@ -80,7 +80,7 @@ const LineChart = () => {
       <div className=" mb-1  float-right">
         <input
          type="date"
-         value={dateStarted}
+         value={startDate}
          onChange={handleStartDateChange}
           className="border border-blue-800 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />

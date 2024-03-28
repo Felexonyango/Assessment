@@ -1,26 +1,34 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
- 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isTrackingMenuOpen, setIsTrackingMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+  const toggleTrackingMenu = () => {
+    setIsTrackingMenuOpen(!isTrackingMenuOpen);
   };
 
   const menuItems = [
-    { label: 'Dashboard', to: '/' },
-    { label:'Modal', to:'/modal'},
-    { label: 'Tracking', to: '/tracking' },
-    { label: 'Analytics', to: '/analytics' }
+    { label: "Dashboard", to: "/" },
+    { label: "Modal", to: "/modal" },
+    { label: "Tracking", 
+      subMenu: [
+        { label: "Track 1", to: "/track1" },
+        { label: "Track 2", to: "/track2" },
+        { label: "Track 3", to: "/track3" }
+      ]
+    },
+    { label: "Analytics", to: "/analytics" },
   ];
 
   return (
     <nav className="bg-blue-950 py-2 px-4">
       <div className="flex items-center justify-between">
-        <div className="text-white font-bold text-sm">LOGO</div>
-        <button onClick={toggleMenu} className="block md:hidden text-white px-2 py-1 rounded focus:outline-none">
+        <div className="text-white font-bold text-sm ml-4">LOGO</div>
+        <button
+          onClick={toggleTrackingMenu}
+          className="block md:hidden text-white px-2 py-1 rounded focus:outline-none"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -35,27 +43,33 @@ const Navbar = () => {
         </button>
         <div className="hidden md:flex md:space-x-4">
           {menuItems.map((item, index) => (
-          <Link to={item.to} key={index} className="text-white px-2 py-1 rounded">
-          {item.label}
-        </Link>
+            <div key={index}>
+              {item.label === "Tracking" ? (
+                <div className="relative">
+                  <span className="text-white px-2 py-1 rounded cursor-pointer" onClick={toggleTrackingMenu}>
+                    {item.label} <i className={`fa fa-caret-down ${isTrackingMenuOpen ? 'transform rotate-180' : ''}`} aria-hidden="true"></i>
+                  </span>
+                  {isTrackingMenuOpen && (
+                    <div className="absolute bg-white text-gray-800 mt-2 w-48 p-2 rounded shadow-lg">
+                      {item.subMenu.map((subItem, subIndex) => (
+                        <Link key={subIndex} to={subItem.to} className="text-gray-600 block px-4 py-2 rounded">
+                          {subItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link to={item.to} className="text-white px-2 py-1 rounded">
+                  {item.label}
+                </Link>
+              )}
+            </div>
           ))}
         </div>
       </div>
-      {/* {isMenuOpen && (
-        <div className="md:hidden bg-white text-gray-800 mt-12 w-full p-2 rounded shadow-lg">
-          <ul className="flex flex-col space-y-2">
-            {menuItems.map((item, index) => (
-              <li key={index}>
-                <Link to={item.to} className="text-gray-600 block px-4 py-2 rounded">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )} */}
     </nav>
   );
-}
+};
 
 export default Navbar;
