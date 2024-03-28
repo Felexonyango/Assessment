@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Chart from "react-apexcharts";
 
 const LineChart = () => {
-  const [startDate, setStartDate] = useState("");
-  const [endDate, setEndDate] = useState("");
+  const [dateStarted, setStartDate] = useState("");
+  // const [endDate, setEndDate] = useState("");
   const [options] = useState({
     chart: {
       id: "line-chart",
@@ -69,9 +69,7 @@ const LineChart = () => {
     setStartDate(event.target.value);
   };
 
-  const handleEndDateChange = (event) => {
-    setEndDate(event.target.value);
-  };
+
 
   return (
     <div
@@ -81,9 +79,9 @@ const LineChart = () => {
       <h6 className="text-left  font-bold text-blue-800">Fleet Mileage</h6>
       <div className=" mb-1  float-right">
         <input
-          type="date"
-          value={endDate}
-          onChange={handleEndDateChange}
+         type="date"
+         value={dateStarted}
+         onChange={handleStartDateChange}
           className="border border-blue-800 px-2 py-1 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>

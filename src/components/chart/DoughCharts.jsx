@@ -68,7 +68,7 @@ const DoughCharts = () => {
       },
       fill: {
         colors: ["#1b998b", "#bb2e45", "#ff9800"],
-        hover: {
+        hover: {  
           // opacity: 0.9,
           colors: ["#1b998b", "#bb2e45", "#ff9800"],
         },
