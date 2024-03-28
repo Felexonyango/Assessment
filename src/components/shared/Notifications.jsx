@@ -73,7 +73,7 @@ const Notifications = () => {
       line1: "KBL 175 G",
       line2: "10/2/2020 -14:00",
       line3: "Kapenguria Deport",
-      iconColor: "#8B0000",
+      iconColor: "#c40000",
       backgroundColor: "#f8faff"
     },
     { 
@@ -82,7 +82,7 @@ const Notifications = () => {
       line1: "KBS 195 H", 
       line2: "12/2/2020 -16:00", 
       line3: "Nyeri Deport" ,
-      iconColor: "#F08080",
+      iconColor: "#ff6262",
       backgroundColor: "#f8faff"
     },
     { 
@@ -91,7 +91,7 @@ const Notifications = () => {
       line1: "KBS 178 V", 
       line2: "14/2/2020 -16:00", 
       line3: "Nairobi Deport" ,
-      iconColor: "#008080",
+      iconColor: "#1a928c",
       backgroundColor: "#f8faff"
     },
     { 

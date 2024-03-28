@@ -64,6 +64,7 @@ fill="#1E3A8A"
 
 
   </span>
+  
   <input
     type="text"
     value={searchInput}
