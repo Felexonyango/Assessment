@@ -7,7 +7,7 @@ const AverageSales = () => {
         series: [
             {
               name: "Average Margin/Cube",
-              data: [13, 21, 9, 7, 3, 36, 20, 28, 28, 16, 17],
+              data: [721, 722, 684, 688, 717, 858, 921, 863, 748, 699, 699],
             },
           ],
           chart: {
@@ -26,6 +26,7 @@ const AverageSales = () => {
               show: false,
     
             }},
+            width: "100%", 
       xaxis: {
         categories: [
           "January",

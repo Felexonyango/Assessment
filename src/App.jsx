@@ -26,9 +26,15 @@ function App() {
         <Revenue />
         <GrossMargin />
         </div>
-        <div className="flex flex-col md:flex-row">
-        <AverageMargin/>
+        <div className="flex flex-col md:flex-row ">
+        <div className=" w-full">
+
         <AverageSales/>
+          </div>
+          <div className=" w-full">
+
+        <AverageMargin/>
+          </div>
 
         </div>
       

@@ -26,6 +26,7 @@ const AverageMargin = () => {
               show: false,
     
             }},
+            width: "100%", 
       xaxis: {
         categories: [
           "January",
