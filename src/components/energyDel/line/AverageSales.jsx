@@ -15,17 +15,17 @@ const AverageSales = () => {
             type: "line",
             zoom: {
               enabled: false
+            },
+            toolbar: {
+              show: false,
+    
             }
           },
           stroke: {
             curve: "straight",
             colors: ["#ed7f33"]
           },
-          chart: {
-            toolbar: {
-              show: false,
-    
-            }},
+          
             width: "100%", 
       xaxis: {
         categories: [
