@@ -11,14 +11,15 @@ const MonthBar = () => {
     (currentYear - startYear) * 12 + (currentMonth - startMonth) + 1;
 
   const months = Array.from({ length: totalMonths }, (_, index) => {
+    const year = startYear + Math.floor((startMonth + index) / 12);
     const monthIndex = (startMonth + index) % 12;
-    return monthIndex < 0 ? monthIndex + 12 : monthIndex;
+    return { year, monthIndex };
   });
 
   const monthLabels = [
     "JAN",
     "FEB",
-    "MARC",
+    "MAR",
     "APR",
     "MAY",
     "JUN",
@@ -41,16 +42,18 @@ const MonthBar = () => {
           })}{" "}
           {startYear}
         </div>
+
+          {currentYear}
         <div className="">
           <div className="flex flex-wrap space-x-4 items-start">
-            {months.map((monthIndex) => (
-              <div key={monthIndex} className="text-center mx-1">
+            {months.map(({ year, monthIndex }) => (
+              <div key={`${year}-${monthIndex}`} className="text-center mx-1">
                 <div className="text-sm font-semibold  text-gray-500 mb-1">
                   {monthLabels[monthIndex]}
                 </div>
                 <div
-                  className={`px-2 py-3 sp rounded-md ${
-                    monthIndex === currentMonth
+                  className={`px-2 py-3 rounded-md ${
+                    year === currentYear && monthIndex === currentMonth
                       ? "bg-blue-500 text-white"
                       : "bg-customGray"
                   }`}
