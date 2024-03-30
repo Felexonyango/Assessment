@@ -12,10 +12,12 @@ import Revenue from "./components/energyDel/bar/Revenue";
 import GrossMargin from "./components/energyDel/bar/GrossMargin";
 import AverageMargin from "./components/energyDel/line/AverageMargin";
 import AverageSales from "./components/energyDel/line/AverageSales";
+import EnergyDashboard from "./components/energyDel/EnergyDashboard";
 
 function App() {
   return (
     <div className="container">
+      <EnergyDashboard/>
       <div className="flex flex-col md:flex-row">
         <FirstChart />
         <SecondChart />
@@ -25,19 +27,15 @@ function App() {
         <VolumeCube />
         <Revenue />
         <GrossMargin />
-        </div>
-        <div className="flex flex-col md:flex-row ">
+      </div>
+      <div className="flex flex-col md:flex-row ">
         <div className=" w-full">
-
-        <AverageSales/>
-          </div>
-          <div className=" w-full">
-
-        <AverageMargin/>
-          </div>
-
+          <AverageSales />
         </div>
-      
+        <div className=" w-full">
+          <AverageMargin />
+        </div>
+      </div>
     </div>
   );
 }
